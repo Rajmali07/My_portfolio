@@ -1,0 +1,97 @@
+Penetration Testing Report on https://www.kayak.co.in/
+
+Title: Security Assessment of kayak.co.in
+This report documents a comprehensive penetration test conducted on the travel website kayak.co.in to identify potential security vulnerabilities and provide actionable recommendations for improving the overall security posture.
+
+Executive Summary
+This penetration test was conducted to assess the security resilience of kayak.co.in against various attack vectors. The assessment included reconnaissance, vulnerability scanning, and exploitation attempts to identify weaknesses in the web application and infrastructure. The test revealed several areas of concern including potential information disclosure, SSL/TLS configuration issues, and exposure to common web application vulnerabilities. The goal was to provide a comprehensive security assessment and recommend appropriate mitigation strategies.
+
+Test Environment
+Component Description
+Attacker Machine Kali Linux (latest version)
+Target Domain kayak.co.in
+Network Setup Standard internet connection
+Tools Used Nmap, Burp Suite, Metasploit, OWASP ZAP
+Scan Type Web application security testing, network reconnaissance
+
+Attack Procedure
+Step 1: Reconnaissance and Footprinting
+Conducted comprehensive information gathering including:
+- DNS enumeration and WHOIS lookup
+- Subdomain discovery
+- IP address geolocation analysis
+- Technology stack identification
+
+Step 2: Vulnerability Scanning
+Performed automated and manual vulnerability assessment:
+- Port scanning with Nmap
+- Web application scanning with Burp Suite
+- SSL/TLS configuration analysis
+- Content Security Policy evaluation
+
+Step 3: Manual Testing
+Conducted manual security testing including:
+- Input validation testing
+- Authentication bypass attempts
+- Session management testing
+- Business logic vulnerability assessment
+
+Step 4: Exploitation Attempts
+Attempted exploitation of identified vulnerabilities:
+- SQL injection testing
+- Cross-Site Scripting (XSS) testing
+- Cross-Site Request Forgery (CSRF) testing
+- File inclusion vulnerabilities
+
+Vulnerability Analysis
+- SSL Certificate Mismatch: Certificate issued to different domain (w»u.ihg.com)
+- Information Disclosure: Multiple IP addresses and infrastructure details exposed
+- CDN Configuration: Potential misconfiguration in Fastly CDN setup
+- HTTP Headers: Missing security headers in some responses
+- Port Exposure: Standard ports 80 and 443 open with service banners
+
+Security Recommendations
+To address the identified security concerns, the following measures are recommended:
+
+Immediate Actions
+1. SSL Certificate Remediation
+   - Obtain proper SSL certificate for kayak.co.in domain
+   - Ensure certificate matches all subdomains and aliases
+   - Implement certificate transparency monitoring
+
+2. CDN Configuration Hardening
+   - Review and optimize Fastly CDN configuration
+   - Implement proper access controls and caching rules
+   - Enable additional security features provided by the CDN
+
+3. Security Headers Implementation
+   - Implement Content Security Policy (CSP)
+   - Add X-Content-Type-Options header
+   - Enable HTTP Strict Transport Security (HSTS)
+   - Implement X-Frame-Options header
+
+Medium-Term Recommendations
+4. Regular Security Assessments
+   - Conduct quarterly penetration tests
+   - Implement continuous vulnerability scanning
+   - Establish bug bounty program
+
+5. Infrastructure Hardening
+   - Implement Web Application Firewall (WAF)
+   - Regular security patch management
+   - Network segmentation and access controls
+
+6. Monitoring and Logging
+   - Implement comprehensive logging
+   - Set up security monitoring and alerting
+   - Regular security audit reviews
+
+Conclusion
+The penetration test revealed that while kayak.co.in has a robust infrastructure with global CDN distribution, there are several security areas that require attention. The SSL certificate configuration issue and potential information disclosure vulnerabilities should be addressed as high priority. Implementing the recommended security measures will significantly enhance the overall security posture of the application.
+
+Tools Used:
+- Nmap for network reconnaissance
+- Burp Suite for web application testing
+- Metasploit for exploitation testing
+- OWASP ZAP for automated scanning
+- Various online reconnaissance tools
