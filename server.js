@@ -9,7 +9,22 @@ const port = 3001;                  // Define the port the server will listen on
 const server = http.createServer((req, res) => {
     // Resolve the requested file path
     // If root URL is requested, serve 'index.html'
-    const filePath = path.join(__dirname, req.url === '/' ? "index.html" : req.url);
+const decodedUrl = decodeURIComponent(req.url === '/' ? '/' : req.url).slice(1);
+  let filePath;
+  if (decodedUrl.startsWith('../')) {
+    // Serve from root
+    filePath = path.normalize(path.join(__dirname, '..', decodedUrl.slice(3)));
+  } else if (decodedUrl.startsWith('reports/')) {
+    // Always serve reports from root reports/
+    filePath = path.join(__dirname, '..', decodedUrl);
+  } else {
+    filePath = path.join(__dirname, decodedUrl);
+  }
+  // Security check
+  if (path.relative(__dirname, filePath).startsWith('..') || filePath.indexOf('\\..\\') !== -1) {
+    filePath = path.join(__dirname, 'index.html');
+  }
+  console.log(`Request: ${req.url} -> ${filePath}`);
 
     // Get the file extension (e.g., .html, .css)
     const extName = String(path.extname(filePath)).toLowerCase();
@@ -63,7 +78,7 @@ const server = http.createServer((req, res) => {
             // Handle file not found error
             if (err.code === "ENOENT") {
                 res.writeHead(404, { "Content-Type": "text/html" });
-                res.end("<h1>404: File not found, Broooo 😅</h1>");
+                res.end(`<h1>404: File not found</h1><p>Requested: ${path.relative(__dirname, filePath)}</p><p>Actual CWD: ${__dirname}</p>`);
             } else {
                 // Handle other server errors
                 res.writeHead(500);
@@ -109,7 +124,11 @@ const server = http.createServer((req, res) => {
                     res.writeHead(500);
                     res.end(`Server Error: ${error.code}`);
                 } else {
-                    res.writeHead(200, { "Content-Type": contentType });
+                    const headers = { "Content-Type": contentType };
+  if (extName === '.pdf') {
+    headers['Content-Disposition'] = 'inline';
+  }
+  res.writeHead(200, headers);
                     res.end(content, 'utf-8');
                 }
             });
