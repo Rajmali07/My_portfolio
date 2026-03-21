@@ -1070,6 +1070,217 @@ section h2 {
   }
 }
 
+/* ===== DEPLOYMENT RESPONSIVE TUNE-UP ===== */
+img,
+video {
+  max-width: 100%;
+}
+
+@media (max-width: 1200px) {
+  nav {
+    padding: 0.9rem 1.2rem;
+  }
+
+  nav ul {
+    gap: 1rem;
+  }
+
+  nav a {
+    padding: 0.45rem 0.7rem;
+  }
+
+  .hero h2,
+  .projects-hero h2 {
+    font-size: clamp(2.2rem, 4.8vw, 3.2rem);
+  }
+
+  .footer-content {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 980px) {
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav h1 {
+    width: 100%;
+    text-align: center;
+  }
+
+  nav ul {
+    margin-left: 0;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .nav-tools {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .project-grid,
+  .reports-grid,
+  .projects-page .project-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .about-intro-grid,
+  .about-values-grid,
+  .contact-grid,
+  .compare-copy,
+  .compare-editor,
+  .project-spotlight-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-spotlight-preview {
+    min-height: 300px;
+  }
+
+  .projects-tab-row {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .journey-card {
+    margin-left: 2.4rem;
+  }
+
+  .journey-card::before {
+    left: -2.2rem;
+  }
+
+  .experience-container {
+    max-width: calc(100vw - 2rem);
+  }
+}
+
+@media (max-width: 720px) {
+  header,
+  .page-header {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .hero,
+  .page-hero {
+    padding: 1.6rem 1.2rem;
+  }
+
+  .hero h2,
+  .projects-hero h2,
+  .about-hero h2 {
+    font-size: clamp(1.9rem, 8vw, 2.7rem);
+  }
+
+  .hero p,
+  .page-hero p,
+  .projects-hero p {
+    font-size: 1rem;
+  }
+
+  .btn,
+  .project-spotlight-copy a,
+  .contact-actions .btn,
+  .contact-actions .btn-secondary {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .mosaic-item {
+    min-width: 220px;
+    height: 150px;
+  }
+
+  .project-card,
+  .report-card,
+  .feature-card,
+  .contact-card,
+  .journey-card,
+  .projects-compare-panel {
+    padding: 1.3rem;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-col {
+    align-items: center;
+  }
+}
+
+@media (max-width: 540px) {
+  nav h1 {
+    font-size: 1.45rem;
+  }
+
+  nav ul {
+    gap: 0.45rem;
+  }
+
+  nav a {
+    font-size: 0.92rem;
+    padding: 0.35rem 0.55rem;
+  }
+
+  .nav-theme-switcher {
+    padding: 0.4rem 0.6rem;
+  }
+
+  .nav-theme-switcher select {
+    min-width: 76px;
+    font-size: 0.82rem;
+  }
+
+  main,
+  .page-main {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .section-inner,
+  .page-hero,
+  .about-hero {
+    width: calc(100vw - 1.25rem);
+  }
+
+  .journey-card {
+    margin-left: 1.8rem;
+    padding: 1.1rem;
+  }
+
+  .journey-showcase::before {
+    left: 11px;
+  }
+
+  .journey-card::before {
+    left: -1.6rem;
+    width: 14px;
+    height: 14px;
+  }
+
+  .project-card h3,
+  .projects-page .project-card h3,
+  .journey-card-head h3,
+  .compare-column h3 {
+    font-size: 1.3rem;
+  }
+
+  .report-btn {
+    width: 100%;
+    text-align: center;
+    margin-right: 0;
+  }
+}
+
 /* ===== ANIMATIONS ===== */
 @keyframes neonPulse {
   0%, 100% {
