@@ -9,44 +9,112 @@ function smoothScrollTo(target) {
   }
 }
 
+function applyTheme(themeName) {
+  const theme = themeName || 'dark';
+
+  if (theme === 'dark') {
+    document.documentElement.style.setProperty('--dark-bg-primary', '#0D0D0D');
+    document.documentElement.style.setProperty('--dark-bg-secondary', '#1A1A2E');
+    document.documentElement.style.setProperty('--neon-pink', '#FF007F');
+    document.documentElement.style.setProperty('--lavender', '#B388EB');
+    document.documentElement.style.setProperty('--electric-blue', '#00BFFF');
+  } else if (theme === 'urban') {
+    document.documentElement.style.setProperty('--dark-bg-primary', '#2C3E50');
+    document.documentElement.style.setProperty('--dark-bg-secondary', '#8E44AD');
+    document.documentElement.style.setProperty('--neon-pink', '#FF69B4');
+    document.documentElement.style.setProperty('--lavender', '#FF69B4');
+    document.documentElement.style.setProperty('--electric-blue', '#FF69B4');
+  } else if (theme === 'minimalist') {
+    document.documentElement.style.setProperty('--dark-bg-primary', '#121212');
+    document.documentElement.style.setProperty('--dark-bg-secondary', '#121212');
+    document.documentElement.style.setProperty('--neon-pink', '#E91E63');
+    document.documentElement.style.setProperty('--lavender', '#E91E63');
+    document.documentElement.style.setProperty('--electric-blue', '#00BCD4');
+  }
+}
+
 // Theme Switching Functionality
 document.addEventListener('DOMContentLoaded', () => {
+  const introOverlay = document.getElementById('intro-overlay');
+  const introRole = document.getElementById('intro-role');
+  const introSkip = document.getElementById('intro-skip');
+  const introRoles = ['Full-Stack Developer', 'Tech Innovator', 'React Developer', 'Security-Focused Builder'];
+  let introRoleIndex = 0;
+  let introIntervalId;
+  let introClosed = false;
+
+  const closeIntro = () => {
+    if (!introOverlay || introOverlay.classList.contains('is-hidden') || introClosed) {
+      return;
+    }
+
+    introClosed = true;
+
+    if (introIntervalId) {
+      clearInterval(introIntervalId);
+    }
+
+    introOverlay.classList.add('is-hidden');
+    document.body.classList.remove('intro-active');
+  };
+
+  const handleIntroExit = () => {
+    closeIntro();
+    window.removeEventListener('wheel', handleIntroExit);
+    window.removeEventListener('touchstart', handleIntroExit);
+    window.removeEventListener('keydown', handleIntroExit);
+    window.removeEventListener('scroll', handleIntroScroll);
+  };
+
+  const handleIntroScroll = () => {
+    if (window.scrollY > 10) {
+      handleIntroExit();
+    }
+  };
+
+  if (introOverlay && introRole) {
+    introIntervalId = window.setInterval(() => {
+      introRoleIndex = (introRoleIndex + 1) % introRoles.length;
+      introRole.textContent = introRoles[introRoleIndex];
+    }, 1000);
+
+    if (introSkip) {
+      introSkip.addEventListener('click', handleIntroExit);
+    }
+
+    window.addEventListener('wheel', handleIntroExit, { passive: true });
+    window.addEventListener('touchstart', handleIntroExit, { passive: true });
+    window.addEventListener('keydown', handleIntroExit);
+    window.addEventListener('scroll', handleIntroScroll, { passive: true });
+  } else {
+    document.body.classList.remove('intro-active');
+  }
+
   // Add smooth scrolling to all links with class 'smooth-scroll'
   document.querySelectorAll('.smooth-scroll').forEach(link => {
     link.addEventListener('click', (e) => {
-      e.preventDefault();
       const target = link.getAttribute('href');
+      if (!target || !target.startsWith('#')) {
+        return;
+      }
+      e.preventDefault();
       smoothScrollTo(target);
     });
   });
   const themeToggle = document.getElementById('theme-toggle');
+  if (themeToggle) {
+    const storedTheme = window.localStorage.getItem('portfolio-theme') || 'dark';
+    themeToggle.value = storedTheme;
+    applyTheme(storedTheme);
 
-  themeToggle.addEventListener('change', (event) => {
-    const selectedTheme = event.target.value;
-
-    if (selectedTheme === 'dark') {
-      // Dark Mode Elegance + Neon Accent Theme
-      document.documentElement.style.setProperty('--dark-bg-primary', '#0D0D0D');
-      document.documentElement.style.setProperty('--dark-bg-secondary', '#1A1A2E');
-      document.documentElement.style.setProperty('--neon-pink', '#FF007F');
-      document.documentElement.style.setProperty('--lavender', '#B388EB');
-      document.documentElement.style.setProperty('--electric-blue', '#00BFFF');
-    } else if (selectedTheme === 'urban') {
-      // Urban Gradient + Futuristic Glow Theme
-      document.documentElement.style.setProperty('--dark-bg-primary', '#2C3E50');
-      document.documentElement.style.setProperty('--dark-bg-secondary', '#8E44AD');
-      document.documentElement.style.setProperty('--neon-pink', '#FF69B4');
-      document.documentElement.style.setProperty('--lavender', '#FF69B4');
-      document.documentElement.style.setProperty('--electric-blue', '#FF69B4');
-    } else if (selectedTheme === 'minimalist') {
-      // Minimalist Noir + Spotlight Color Theme
-      document.documentElement.style.setProperty('--dark-bg-primary', '#121212');
-      document.documentElement.style.setProperty('--dark-bg-secondary', '#121212');
-      document.documentElement.style.setProperty('--neon-pink', '#E91E63');
-      document.documentElement.style.setProperty('--lavender', '#E91E63');
-      document.documentElement.style.setProperty('--electric-blue', '#00BCD4');
-    }
-  });
+    themeToggle.addEventListener('change', (event) => {
+      const selectedTheme = event.target.value;
+      applyTheme(selectedTheme);
+      window.localStorage.setItem('portfolio-theme', selectedTheme);
+    });
+  } else {
+    applyTheme(window.localStorage.getItem('portfolio-theme') || 'dark');
+  }
 
   // Contact Form Submission
   const contactForm = document.getElementById('contact-form');
@@ -105,7 +173,10 @@ document.addEventListener('DOMContentLoaded', () => {
     '.reports-section .report-card',
     '.experience .timeline-item',
     '.skills .skills-list span',
-    '.testimonials .test-card'
+    '.testimonials .test-card',
+    '.about-intro .animate-section-item',
+    '.journey-section .animate-section-item',
+    '.about-values .animate-section-item'
   ];
 
   revealGroups.forEach((selector) => {

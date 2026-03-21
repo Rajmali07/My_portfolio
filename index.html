@@ -8,7 +8,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;700&family=Orbitron&family=Rajdhani:wght@400;700&family=Roboto+Mono:wght@400;700&family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="intro-active">
+  <div class="intro-overlay" id="intro-overlay" aria-hidden="true">
+    <div class="intro-stars"></div>
+    <div class="intro-content">
+      <p class="intro-kicker">There is a new developer in town</p>
+      <h2 class="intro-title">Meet <span>Bihari</span></h2>
+      <p class="intro-role-line">I am a <span id="intro-role">Full-Stack Developer</span></p>
+      <p class="intro-note">Building polished web experiences with code, creativity, and security in mind.</p>
+    </div>
+  </div>
   <header>
     <div class="header-video">
       <video class="header-video-bg" autoplay muted loop playsinline>
@@ -19,12 +28,21 @@
     <nav>
       <h1>Bihari Mali</h1>
       <ul>
-        <li><a href="#projects" class="smooth-scroll">Projects</a></li>
-        <li><a href="#features" class="smooth-scroll">Features</a></li>
-        <li><a href="#reports" class="smooth-scroll">Reports</a></li>
-        <li><a href="#skills" class="smooth-scroll">Skills</a></li>
-        <li><a href="#contact" class="smooth-scroll">Contact</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
+      <div class="nav-tools">
+        <div class="nav-theme-switcher">
+          <i class="fas fa-palette nav-theme-icon" aria-hidden="true"></i>
+          <select id="theme-toggle" aria-label="Switch theme">
+            <option value="dark">Dark</option>
+            <option value="urban">Urban</option>
+            <option value="minimalist">Minimal</option>
+          </select>
+        </div>
+      </div>
     </nav>
 
     <section class="hero">
@@ -32,14 +50,6 @@
       <p>Full-stack developer & ethical hacker crafting elegant web solutions.</p>
       <a href="#projects" class="btn smooth-scroll">View My Work</a>
     </section>
-  <div class="theme-switcher">
-    <label for="theme-toggle">Switch Theme:</label>
-    <select id="theme-toggle">
-      <option value="dark">Dark Mode</option>
-      <option value="urban">Urban Gradient</option>
-      <option value="minimalist">Minimalist Noir</option>
-    </select>
-  </div>
   </header>
 
   <main>
@@ -50,7 +60,7 @@
     <div class="mosaic-row" id="mosaic-row-1">
       <a class="mosaic-item" href="https://www.linkedin.com/in/bihari-mali/" target="_blank" rel="noopener noreferrer"><img src="Linkedin.png" alt="LinkedIn"></a>
       <a class="mosaic-item" href="https://github.com/Rajmali07" target="_blank" rel="noopener noreferrer"><img src="github.png" alt="Github"></a>
-      <a class="mosaic-item" href="https://supabase.com/" target="_blank" rel="noopener noreferrer"><img src="Supabase.cpp.png" alt="Supabase"></a>
+      <a class="mosaic-item" href="https://www.hackerrank.com/profile/bihari_mali2023" target="_blank" rel="noopener noreferrer"><img src="HackerRank.png" alt="HackerRank"></a>
       <a class="mosaic-item" href="https://lenis.darkroom.engineering/" target="_blank" rel="noopener noreferrer"><img src="Lenis.png" alt="Lenis"></a>
     </div>
 
@@ -80,22 +90,22 @@
         <div class="project-card">
           <h3>Restaurant Billing System</h3>
           <p>Full-stack app with invoice generation and secure login. Built with modern web technologies and responsive design.</p>
-          <a href="https://swachraipur.netlify.app/" target="_blank" rel="noopener noreferrer">View Project</a>
+          <a href="https://myrestaurantbillgeneration.netlify.app/" target="_blank" rel="noopener noreferrer">View Project</a>
         </div>
         <div class="project-card">
-          <h3>Ghibli UI Showcase</h3>
-          <p>Creative React-based UI inspired by Studio Ghibli aesthetics. Features smooth animations and interactive elements.</p>
+          <h3>Portfolio</h3>
+          <p>Creative Motion-based UI inspired by Studio Ghibli aesthetics. Features smooth animations and interactive elements.</p>
           <a href="https://swachraipur.netlify.app/" target="_blank" rel="noopener noreferrer">View Project</a>
         </div>
         <div class="project-card">
           <h3>Unity Workers & Constructions</h3>
           <p>An online platform connecting clients with service providers such as carpenters, plumbers, electricians, and more.</p>
-          <a href="https://github.com/Rajmali07" target="_blank" rel="noopener noreferrer">View Project</a>
+          <a href="https://www.uwcindia.in/" target="_blank" rel="noopener noreferrer">View Project</a>
         </div>
         <div class="project-card">
           <h3>Restaurant Billing Management</h3>
           <p>Manages customer billing with details such as item name, price, GST, quantity, date, and payment method.</p>
-          <a href="https://github.com/Rajmali07" target="_blank" rel="noopener noreferrer">View Project</a>
+          <a href="https://hospitalregistration1.netlify.app/" target="_blank" rel="noopener noreferrer">View Project</a>
         </div>
         <div class="project-card">
           <h3>Hospital Registration App using AI</h3>
@@ -111,6 +121,11 @@
           <h3>Frontend Clones</h3>
           <p>Clones of Amazon, Myntra, and Netflix focusing on frontend development.</p>
           <a href="https://github.com/Rajmali07" target="_blank" rel="noopener noreferrer">View Project</a>
+        </div>
+        <div class="project-card">
+          <h3>Swach Raipur</h3>
+          <p>A civic-focused web platform designed to promote cleaner neighborhoods through a polished, responsive user experience.</p>
+          <a href="https://swachraipur.netlify.app/" target="_blank" rel="noopener noreferrer">View Project</a>
         </div>
         
       </div>
@@ -261,32 +276,98 @@
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>Senior Security Developer</h3>
-                        <span class="company">TechSecure Inc.</span>
-                        <span class="date">2022 - Present</span>
-                        <p>Leading security initiatives for enterprise applications, conducting code reviews, 
-                           and implementing secure development practices across the organization.</p>
+                        <h3>Robotics Developer</h3>
+                        <span class="company">Competition .</span>
+                        <span class="date">2023-2024</span>
+                        <span class="company">Developed and engineered small-scale robots for national-level competitions, including Robo War, Robo Sumo, Save the Egg, Robo Soccer, Sandrover, and other innovative builds.</span>
+                        <p>• Awarded Participation Certificate in Robo War at IIT Kharagpur.</p>
+                        <p>• Achieved Runner-Up position in Sandrover at IIT Kharagpur.</p>
+                        <p>• Secured Third Place in robotics competition at COEP Technical University, Pune.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>Cybersecurity Consultant</h3>
-                        <span class="company">SecureSolutions LLC</span>
-                        <span class="date">2020 - 2022</span>
-                        <p>Provided security consulting services including penetration testing, vulnerability 
-                           assessments, and security architecture design for various clients.</p>
+                        <h3>Web Development & Programming Learner</h3>
+                        <span class="company">Frontend, Problem Solving</span>
+                        <span class="date">2023-2024</span>
+                        <span class="company">Explored modern web technologies and programming fundamentals through self-learning and structured courses.</span>
+                        <p>• Built frontend project clones such as Amazon and custom web pages using HTML, CSS, and JavaScript.</p>
+                        <p>• Earned CSS (Basic) certificate from HackerRank.</p>
+                        <p>• Achieved 3-Star rating on HackerRank for C++ practice.</p>
+                        <p>• Completed “Introduction to C++” and “Become Job-Ready in Coding: Basics of Data Structures and Algorithms” certifications from SimpliLearn.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>Full-Stack Developer</h3>
+                        <h3>FullStack Development Trainee</h3>
                         <span class="company">InnovateTech</span>
-                        <span class="date">2018 - 2020</span>
-                        <p>Developed web applications with a focus on security best practices and performance 
-                           optimization.</p>
+                        <span class="date">2024-2025</span>
+                        <span class="company">Advanced backend and fullstack development skills through structured online learning and vocational training, From Technonet Automation, Bhilai (Chhattisgarh)</span>
+                        <p>• Completed FullStack Development course on Udemy, covering frontend and backend integration.</p>
+                        <p>• Selected FullStack specialization during Vocational Training at Technonet Automation, Bhilai, Raipur, Chhattisgarh for deeper understanding and practical exposure.</p>
+                        <p>• Strengthened expertise in building end-to-end applications, focusing on scalable architecture and modern frameworks.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Cybersecurity Trainee</h3>
+                        <span class="company">Security inc.</span>
+                        <span class="date">2024-2025</span>
+                        <span class="company">Enrolled in the Cyber Security Expert program to gain hands-on knowledge of modern security practices and tools, From NexonIT, Hyderabad (Tilangana).</span>
+                        <p>• Completed a 4-month training program with Completion Certificate and Gold Badges.</p>
+                        <p>• Learned core concepts of networking, cloud platforms, ethical hacking, bug hunting, penetration testing, and defensive techniques.</p>
+                        <p>• Gained practical exposure to cybersecurity tools and operating systems including Kali Linux and Windows.</p>
+                        <p>• Developed strong foundations in security operations, vulnerability analysis, and threat mitigation strategies.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Deep Learning Engineer (Career Pathway)</h3>
+                        <span class="company">AI development</span>
+                        <span class="date">2025-2026</span>
+                        <span class="company">Completed the Deep Learning Engineercareer pathway through L&T EduTech LearnKonnect, mastering advanced AI and machine learning concepts, which is provided from my college.</span>
+                        <p>• Earned four pathway certificates, covering:
+                          <p>-> Earned four pathway certificates, covering:</p>
+                          <p>-> Applied Machine Learning Specialization</p>
+                          <p>-> Deep Learning Essentials</p>
+                          <p>-> Computer Vision Essentials: A Guide for Engineers</p>
+                        </p>
+                        <p>• Gained hands-on expertise with TensorFlow and PyTorch for building, training, and deploying deep learning models.</p>
+                        <p>• Developed strong skills in neural networks, CNNs, RNNs, NLP, and computer vision applications.</p>
+                        <p>• Prepared for career opportunities in AI, data science, and machine learning engineering.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>FullStack & Problem-Solving Projects</h3>
+                        <span class="company">deployment-ready</span>
+                        <span class="date">2026-Present</span>
+                        <span class="company">Working on advanced deployment projects and real-world applications while strengthening algorithmic problem-solving skills.</span>
+                        <p>• Built and deployed multiple web applications, including:
+                          <p>-> Unity Worker & Constructions web.</p>
+                          <p>-> More Swach Raipur web.</p>
+                          <p>-> Hospital Registration web.</p>
+                          <p>-> Restaurant Billing Generator web.</p>
+                        </p>
+                        <p>• Focused on solving Data Structures & Algorithms (DSA) problems in C++ through platforms like NeetCode and LeetCode.</p>
+                        <p>• Achieved consistent progress in aptitude and reasoning preparation, enhancing analytical and problem-solving capabilities.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Future Career Plan</h3>
+                        <span class="company">Loading...</span>
+                        <span class="date">2026-Beyond</span>
+                        <span class="company">Focused on securing a strong placement opportunity through college recruitment, leveraging technical expertise and project experience.</span>
+                        <p>• Aim to join a reputed organization where I can apply my skills in FullStack Development, Cybersecurity, and Deep Learning to solve real-world problems.</p>
+                        <p>• Continue building advanced projects that demonstrate innovation and practical impact, strengthening my portfolio for recruiters.</p>
+                        <p>• Enhance problem-solving abilities by practicing Data Structures & Algorithms (DSA) and preparing for technical interviews.</p>
+                        <p>• Maintain consistent progress in aptitude and reasoning skills to excel in placement assessments.</p>
+                        <p>• Long-term vision: grow into a role that combines software engineering and AI-driven solutions, contributing to impactful technology development.</p>
                     </div>
                 </div>
             </div>
+            
         </div>
     </section>
     
@@ -312,7 +393,7 @@
       <span>MongoDB</span>
 
       <span>MySQL</span>
-      <span>Django</span>
+      <span>Supabase</span>
       <span>AWS</span>
       <span>Three.js</span>
       <span>Git</span>
@@ -404,10 +485,11 @@
 
     <div class="footer-col">
       <h4>Quick Links</h4>
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Projects</a>
-      <a href="#">Contact</a>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="reports.html">Reports</a>
+      <a href="contact.html">Contact</a>
     </div>
 
     <div class="footer-col">
