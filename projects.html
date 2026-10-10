@@ -5,30 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bihari Mali Projects | Full Stack, Cybersecurity & AI Work</title>
   <meta name="description" content="Browse projects by Bihari Mali including full-stack web apps, civic platforms, service marketplace builds, cybersecurity work, and AI-focused concepts." />
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;700&family=Orbitron&family=Rajdhani:wght@400;700&family=Roboto+Mono:wght@400;700&family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="projects.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Montserrat:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="projects-page">
   <header class="page-header projects-header">
     <nav>
       <h1>Bihari Mali</h1>
-      <ul>
+      <ul id="primary-navigation">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="projects.html" class="nav-link-active">Projects</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <div class="nav-tools">
-        <div class="nav-theme-switcher">
-          <i class="fas fa-palette nav-theme-icon" aria-hidden="true"></i>
-          <select id="theme-toggle" aria-label="Switch theme">
-            <option value="dark">Dark</option>
-            <option value="urban">Urban</option>
-            <option value="minimalist">Minimal</option>
-          </select>
-        </div>
-      </div>
+      <button class="nav-menu" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
     </nav>
 
     <section class="hero page-hero projects-hero">
@@ -435,8 +430,7 @@
   </main>
 
   <footer class="footer">
-    <video class="footer-video" autoplay muted loop playsinline>
-      <source src="blackhole.webm" type="video/mp4">
+    <video class="footer-video" data-src="blackhole.webm" preload="none" autoplay muted loop playsinline>
     </video>
     <div class="footer-overlay"></div>
     <div class="footer-content">
@@ -470,6 +464,6 @@
       <p>© 2026 BihariMali | Portfolio</p>
     </div>
   </footer>
-  <script src="script.js"></script>
+  <script type="module" src="projects.js"></script>
 </body>
 </html>
