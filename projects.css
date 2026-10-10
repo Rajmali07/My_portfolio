@@ -2449,6 +2449,37 @@ nav {
   box-shadow: 0 10px 28px rgba(201, 168, 76, 0.2);
 }
 
+/* Keep every button and button-style project action consistently rounded. */
+.projects-page button,
+.projects-page input[type="button"],
+.projects-page input[type="submit"],
+.projects-page .project-card a,
+.projects-page .project-spotlight-copy a,
+.projects-page .vault-pill-link,
+.projects-page .projects-tab {
+  border-radius: var(--border-radius);
+}
+
+.projects-page .project-card a,
+.projects-page .project-spotlight-copy a,
+.projects-page .vault-pill-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.projects-page .project-card a:hover,
+.projects-page .project-spotlight-copy a:hover,
+.projects-page .vault-pill-link:hover {
+  color: #110F0C;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(201, 168, 76, 0.28);
+}
+
 .projects-page .project-spotlight-card .project-mini-label,
 .project-spotlight-card .preview-label,
 .project-meta,
