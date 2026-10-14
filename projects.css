@@ -1,4 +1,13 @@
 /* ===== CSS VARIABLES FOR THEMES ===== */
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600;6..96,700&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+body {
+  font-family: 'DM Sans', sans-serif;
+}
+
+h1, h2, h3, a {
+  font-family: 'Bodoni Moda', serif;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -1399,6 +1408,34 @@ html {
   background: rgba(255, 255, 255, 0.03);
   color: rgba(255, 255, 255, 0.86);
   font-weight: 600;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.projects-tab:hover {
+  transform: translateY(-2px);
+}
+
+.projects-tab:focus-visible {
+  outline: 3px solid rgba(240, 208, 128, 0.8);
+  outline-offset: 3px;
+}
+
+.project-filter-status {
+  min-height: 1.4em;
+  margin: 0.85rem 0 0;
+  color: var(--text-secondary);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.projects-page .project-card[hidden],
+.projects-page .project-spotlight-stack[hidden],
+.projects-page .project-section[hidden] {
+  display: none !important;
 }
 
 .projects-tab-active {
@@ -1595,6 +1632,118 @@ html {
   background: linear-gradient(135deg, #f0fff4, #b5f2c8);
   color: #09351f;
   box-shadow: 0 12px 34px rgba(128, 228, 162, 0.22);
+}
+
+.project-spotlight-airbnb {
+  background:
+    radial-gradient(circle at 80% 18%, rgba(255, 146, 113, 0.15), transparent 24%),
+    radial-gradient(circle at 20% 80%, rgba(255, 208, 143, 0.12), transparent 26%),
+    linear-gradient(180deg, rgba(99, 46, 34, 0.24), rgba(34, 17, 21, 0.96)),
+    rgba(22, 12, 14, 0.96);
+  border-color: rgba(255, 190, 155, 0.2);
+}
+
+.project-spotlight-airbnb .project-mini-label,
+.project-spotlight-airbnb .preview-airbnb-header strong {
+  color: #ffc29f;
+}
+
+.project-spotlight-airbnb .project-spotlight-copy a {
+  background: linear-gradient(135deg, #fff2e8, #ffb88f);
+  color: #3a1a11;
+  box-shadow: 0 12px 34px rgba(255, 150, 111, 0.22);
+}
+
+.preview-airbnb-board {
+  position: absolute;
+  inset: 2rem 1.5rem 1.5rem 1rem;
+  padding: 1.25rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 218, 195, 0.14);
+  border-radius: 26px;
+  background: linear-gradient(145deg, rgba(49, 30, 28, 0.98), rgba(22, 17, 22, 0.98));
+  box-shadow: 0 22px 56px rgba(0, 0, 0, 0.4);
+}
+
+.preview-airbnb-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+  color: rgba(255, 242, 233, 0.66);
+  font-size: 0.72rem;
+}
+
+.preview-airbnb-header strong {
+  font-size: 1.1rem;
+}
+
+.preview-airbnb-listings {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.preview-airbnb-listing {
+  min-width: 0;
+  padding: 0.45rem;
+  border: 1px solid rgba(255, 229, 213, 0.1);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.045);
+  color: #fff4ed;
+  font-size: 0.62rem;
+}
+
+.preview-airbnb-listing strong,
+.preview-airbnb-listing span,
+.preview-airbnb-listing b {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.preview-airbnb-listing strong {
+  margin-top: 0.45rem;
+  font-size: 0.68rem;
+}
+
+.preview-airbnb-listing span {
+  margin: 0.2rem 0 0.35rem;
+  color: rgba(255, 242, 233, 0.62);
+  font-size: 0.58rem;
+}
+
+.preview-airbnb-listing b {
+  color: #ffc29f;
+}
+
+.preview-airbnb-listing small {
+  color: rgba(255, 242, 233, 0.65);
+  font-weight: 400;
+}
+
+.preview-airbnb-photo {
+  height: 96px;
+  border-radius: 10px;
+  background-size: cover;
+}
+
+.preview-airbnb-photo-coast {
+  background: linear-gradient(160deg, transparent 42%, rgba(20, 54, 67, 0.92) 43%), linear-gradient(135deg, #a7dbdf, #f2c9a0 53%, #5d9f9c 54%);
+}
+
+.preview-airbnb-photo-cabin {
+  background: linear-gradient(155deg, transparent 38%, rgba(24, 47, 36, 0.95) 39%), linear-gradient(135deg, #b8d2bb, #d9c49e 52%, #6e9874 53%);
+}
+
+.preview-airbnb-photo-city {
+  background: linear-gradient(90deg, rgba(54, 46, 65, 0.75) 20%, transparent 21% 42%, rgba(54, 46, 65, 0.82) 43% 61%, transparent 62%), linear-gradient(145deg, #e9bc98, #c87e76 55%, #54455f 56%);
+}
+
+.project-spotlight-airbnb .preview-panel-float {
+  border-color: rgba(255, 190, 155, 0.18);
+  background: linear-gradient(145deg, rgba(64, 37, 31, 0.98), rgba(29, 20, 22, 0.98));
 }
 
 .project-spotlight-preview {

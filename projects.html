@@ -42,12 +42,13 @@
         <p class="projects-now-copy animate-section-item">This page highlights the kind of work I love most: fast interfaces, thoughtful systems, and security-conscious builds that feel premium from the first click.</p>
 
         <div class="projects-tab-row animate-section-item" aria-label="Project categories">
-          <span class="projects-tab projects-tab-active">Featured</span>
-          <span class="projects-tab">Full Stack</span>
-          <span class="projects-tab">Frontend</span>
-          <span class="projects-tab">Security</span>
-          <span class="projects-tab">Experiments</span>
+          <button class="projects-tab projects-tab-active" type="button" data-project-filter="featured" aria-pressed="true">Featured</button>
+          <button class="projects-tab" type="button" data-project-filter="full-stack" aria-pressed="false">Full Stack</button>
+          <button class="projects-tab" type="button" data-project-filter="frontend" aria-pressed="false">Frontend</button>
+          <button class="projects-tab" type="button" data-project-filter="security" aria-pressed="false">Security</button>
+          <button class="projects-tab" type="button" data-project-filter="experiments" aria-pressed="false">Experiments</button>
         </div>
+        <p class="project-filter-status" role="status" aria-live="polite">Showing featured projects.</p>
 
         <div class="project-spotlight-stack">
           <article class="project-card project-spotlight-card project-spotlight-digitalfarm animate-section-item">
@@ -110,6 +111,40 @@
             </div>
           </article>
 
+          <article class="project-card project-spotlight-card project-spotlight-airbnb animate-section-item">
+            <div class="project-browser-bar">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="project-spotlight-grid">
+              <div class="project-spotlight-copy">
+                <p class="project-mini-label">Full-Stack Web Application · Started 2025</p>
+                <h3>Airbnb – Property Rental Platform</h3>
+                <p>A full-stack property rental platform inspired by Airbnb. Browse property listings and accommodation details through database-backed pages, server-side routes, and a responsive interface.</p>
+                <div class="project-pill-row">
+                  <span>Node.js</span>
+                  <span>Express.js</span>
+                  <span>MongoDB</span>
+                  <span>Responsive UI</span>
+                </div>
+                <a href="https://airbnb-olbi.onrender.com/listing" target="_blank" rel="noopener noreferrer">Launch Project</a>
+              </div>
+              <div class="project-spotlight-preview preview-airbnb" aria-hidden="true">
+                <div class="preview-airbnb-board">
+                  <div class="preview-airbnb-header"><strong>Find your next stay</strong><span>Anywhere&nbsp; · &nbsp;Any week&nbsp; · &nbsp;Guests</span></div>
+                  <div class="preview-airbnb-listings">
+                    <div class="preview-airbnb-listing"><div class="preview-airbnb-photo preview-airbnb-photo-coast"></div><strong>Coastal hideaway</strong><span>Ocean views · 2 beds</span><b>$142 <small>night</small></b></div>
+                    <div class="preview-airbnb-listing"><div class="preview-airbnb-photo preview-airbnb-photo-cabin"></div><strong>Forest cabin</strong><span>Quiet retreat · 1 bed</span><b>$98 <small>night</small></b></div>
+                    <div class="preview-airbnb-listing"><div class="preview-airbnb-photo preview-airbnb-photo-city"></div><strong>City loft</strong><span>Walkable · 2 beds</span><b>$126 <small>night</small></b></div>
+                  </div>
+                </div>
+                <div class="preview-panel preview-panel-float preview-panel-left"><span>Guest favorite</span></div>
+                <div class="preview-panel preview-panel-float preview-panel-right"><span>4.9 ★ Rating</span></div>
+              </div>
+            </div>
+          </article>
+
           <article class="project-card project-spotlight-card project-spotlight-billing animate-section-item">
             <div class="project-browser-bar">
               <span></span>
@@ -127,7 +162,7 @@
                   <span>JavaScript</span>
                   <span>Responsive UI</span>
                 </div>
-                <a href="https://swachraipur.netlify.app/" target="_blank" rel="noopener noreferrer">Launch Project</a>
+                <a href="https://restrobillgenerator.netlify.app/" target="_blank" rel="noopener noreferrer">Launch Project</a>
               </div>
               <div class="project-spotlight-preview preview-billing" aria-hidden="true">
                 <div class="preview-panel preview-panel-main">
@@ -255,7 +290,7 @@
                   <span>Accessibility</span>
                   <span>Booking Flow</span>
                 </div>
-                <a href="https://github.com/Rajmali07" target="_blank" rel="noopener noreferrer">Launch Project</a>
+                <a href="https://hospregistration.netlify.app/" target="_blank" rel="noopener noreferrer">Launch Project</a>
               </div>
               <div class="project-spotlight-preview preview-hospital" aria-hidden="true">
                 <div class="preview-panel preview-panel-main preview-panel-medical">
@@ -287,18 +322,7 @@
         <h2 class="animate-section-item">Selected builds from design-heavy interfaces to practical full-stack systems.</h2>
         <p class="projects-section-copy animate-section-item">Each card represents a project where I focused on usable experiences, structure, and visual refinement instead of just shipping a page.</p>
         <div class="project-grid">
-          <div class="project-card animate-section-item">
-            <h3>Restaurant Billing System</h3>
-            <p>Full-stack app with invoice generation and secure login. Built with modern web technologies and responsive design.</p>
-            <div class="project-meta">Full Stack • Billing • Responsive</div>
-            <a href="https://swachraipur.netlify.app/" target="_blank" rel="noopener noreferrer">View Project</a>
-          </div>
-          <div class="project-card animate-section-item">
-            <h3>Ghibli UI Showcase</h3>
-            <p>Creative React-based UI inspired by Studio Ghibli aesthetics. Features smooth animations and interactive elements.</p>
-            <div class="project-meta">React • Motion • Creative UI</div>
-            <a href="https://swachraipur.netlify.app/" target="_blank" rel="noopener noreferrer">View Project</a>
-          </div>
+          
           <div class="project-card animate-section-item">
             <h3>Unity Workers & Constructions</h3>
             <p>An online platform connecting clients with service providers such as carpenters, plumbers, electricians, and more.</p>
@@ -315,7 +339,7 @@
             <h3>Hospital Registration App using AI</h3>
             <p>Allows patients to book appointments from home with a user-friendly interface inspired by ATM screens.</p>
             <div class="project-meta">Healthcare • AI Concept • Accessibility</div>
-            <a href="https://github.com/Rajmali07" target="_blank" rel="noopener noreferrer">View Project</a>
+            <a href="https://hospregistration.netlify.app/" target="_blank" rel="noopener noreferrer">View Project</a>
           </div>
           <div class="project-card animate-section-item">
             <h3>Line Follower Robot with Arduino</h3>
@@ -337,9 +361,15 @@
           </div>
           <div class="project-card animate-section-item">
             <h3>AI Powered Digital Farm Management</h3>
-            <p>A smart farm management platform designed to streamline daily operations with a modern, responsive interface.</p>
+            <p>A smart farm management platform designed to streamline daily operations.</p>
             <div class="project-meta">AI • Farm Ops • Responsive UI</div>
             <a href="https://aidigitalfarm.netlify.app/" target="_blank" rel="noopener noreferrer">View Project</a>
+          </div>
+          <div class="project-card animate-section-item">
+            <h3>Property Rental Platform</h3>
+            <p>Full-stack rental app for browsing property listings and accommodation details.</p>
+            <div class="project-meta">Full-Stack Web Application · Started 2026</div>
+            <a href="https://airbnb-olbi.onrender.com/listing" target="_blank" rel="noopener noreferrer">View Project</a>
           </div>
         </div>
       </div>
@@ -449,7 +479,7 @@
       </div>
       <div class="footer-col">
         <h4>Get in Touch</h4>
-        <p><i class="fas fa-envelope"></i> bihari.mali2023@ssipmt.com</p>
+        <p><i class="fas fa-envelope"></i> rajm15804@gmail.com </p>
         <p><i class="fas fa-map-marker-alt"></i> Raipur, Chhattisgarh, India</p>
       </div>
       <div class="footer-col">
@@ -457,7 +487,7 @@
         <div class="socials">
           <a href="https://github.com/Rajmali07" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"><i class="fab fa-github"></i></a>
           <a href="https://www.linkedin.com/in/bihari-mali/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><i class="fab fa-linkedin"></i></a>
-          <a href="mailto:bihari.mali2023@ssipmt.com" aria-label="Send email"><i class="fas fa-envelope"></i></a>
+          <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=rajm15804%40gmail.com" aria-label="Send email"><i class="fas fa-envelope"></i></a>
         </div>
       </div>
     </div>
@@ -466,5 +496,6 @@
     </div>
   </footer>
   <script type="module" src="projects.js"></script>
+  <script src="project-filters.js"></script>
 </body>
 </html>
