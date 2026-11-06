@@ -1,8 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <defs>
-    <clipPath id="circle">
-      <circle cx="32" cy="32" r="32" />
+    <clipPath id="photo-circle">
+      <circle cx="32" cy="32" r="30" />
     </clipPath>
   </defs>
-  <image href="mysoloimg.png" width="64" height="64" preserveAspectRatio="xMidYMid slice" clip-path="url(#circle)" />
+  <image href="./mysoloimg.png" x="2" y="2" width="60" height="60"
+    preserveAspectRatio="xMidYMid slice" clip-path="url(#photo-circle)" />
+  <circle cx="32" cy="32" r="30" fill="none" stroke="#c9a13b" stroke-width="2" />
 </svg>
